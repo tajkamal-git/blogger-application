@@ -1,0 +1,62 @@
+.signup-page { min-height: 100vh; display: flex; font-family: 'Inter', sans-serif; }
+
+.signup-left {
+  flex: 1; background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 60%, #EC4899 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 60px 50px; position: relative; overflow: hidden;
+}
+.signup-left::before {
+  content: ''; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
+}
+.signup-blob { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.07); }
+.signup-blob-1 { width: 300px; height: 300px; top: -100px; left: -80px; }
+.signup-blob-2 { width: 200px; height: 200px; bottom: -60px; right: -40px; }
+.signup-left-content { position: relative; z-index: 1; text-align: center; }
+.signup-left-logo { width: 64px; height: 64px; object-fit: contain; margin-bottom: 20px; border-radius: 14px; background: rgba(255,255,255,0.15); padding: 10px; }
+.signup-left-title { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: white; margin-bottom: 14px; }
+.signup-left-sub { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.7; max-width: 300px; }
+.signup-left-features { margin-top: 40px; display: flex; flex-direction: column; gap: 14px; }
+.signup-feature { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 16px; }
+.signup-feature span:first-child { font-size: 20px; }
+.signup-feature span:last-child { color: rgba(255,255,255,0.9); font-size: 14px; font-weight: 500; }
+
+.signup-right {
+  flex: 1; background: var(--bg-secondary);
+  display: flex; align-items: center; justify-content: center; padding: 60px 50px;
+}
+.signup-form-box { width: 100%; max-width: 420px; animation: fadeInUp 0.5s ease; }
+.signup-form-box h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 6px; }
+.signup-form-box > p { color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+
+.form-group { margin-bottom: 18px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.5px; }
+.input-wrap { position: relative; }
+.input-wrap .input-field { padding-right: 44px; }
+.input-toggle { position: absolute; right: 13px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 16px; padding: 0; line-height: 1; transition: color var(--transition-fast); }
+.input-toggle:hover { color: var(--primary); }
+
+.pwd-strength { margin-top: 6px; }
+.pwd-strength-bar { display: flex; gap: 4px; margin-bottom: 4px; }
+.pwd-strength-bar span { height: 3px; flex: 1; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+.pwd-strength-bar span.active.weak { background: var(--error); }
+.pwd-strength-bar span.active.fair { background: var(--warning); }
+.pwd-strength-bar span.active.strong { background: var(--success); }
+.pwd-strength-label { font-size: 11px; color: var(--text-muted); }
+
+.signup-error { background: var(--error-bg); border: 1px solid rgba(239,68,68,0.3); border-radius: var(--radius-sm); padding: 11px 15px; color: var(--error); font-size: 13px; margin-bottom: 18px; }
+.signup-submit { width: 100%; padding: 14px; font-size: 15px; border-radius: var(--radius-sm); margin-top: 6px; }
+.signup-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none !important; }
+.signup-login-link { text-align: center; font-size: 14px; color: var(--text-secondary); margin-top: 20px; }
+.signup-login-link a { color: var(--primary); font-weight: 600; }
+.spinner { width: 18px; height: 18px; border: 2px solid rgba(255,255,255,0.3); border-top-color: white; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+
+.signup-mobile-brand { display: none; align-items: center; gap: 10px; margin-bottom: 24px; }
+.signup-mobile-brand img { width: 38px; height: 38px; border-radius: 10px; object-fit: contain; }
+.signup-mobile-brand span { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-primary); }
+
+@media (max-width: 768px) {
+  .signup-left { display: none; }
+  .signup-right { padding: 32px 24px; align-items: flex-start; padding-top: 56px; }
+  .signup-mobile-brand { display: flex; }
+}
